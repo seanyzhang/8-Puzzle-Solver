@@ -1,6 +1,3 @@
-#
-# eight_puzzle.py (Final project)
-#
 # driver/test code for state-space search on Eight Puzzles   
 #
 # name: Sean Zhang
