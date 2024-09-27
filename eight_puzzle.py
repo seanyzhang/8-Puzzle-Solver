@@ -5,11 +5,6 @@
 #
 # name: Sean Zhang
 # email: zsean@bu.edu
-#
-# If you worked with a partner, put their contact info below:
-# partner's name:
-# partner's email:
-#
 
 from searcher import *
 from timer import *
@@ -18,20 +13,18 @@ def create_searcher(algorithm, param):
     """ a function that creates and returns an appropriate
         searcher object, based on the specified inputs. 
         inputs:
-          * algorithm - a string specifying which algorithm the searcher
+          algorithm - a string specifying which algorithm the searcher
               should implement
-          * param - a parameter that can be used to specify either
+          param - a parameter that can be used to specify either
             a depth limit or the name of a heuristic function
-        Note: If an unknown value is passed in for the algorithm parameter,
+        If an unknown value is passed in for the algorithm parameter,
         the function returns None.
     """
     searcher = None
     
     if algorithm == 'random':
         searcher = Searcher(param)
-    
-## You will uncommment the following lines as you implement
-## other algorithms.
+
     elif algorithm == 'BFS':
         searcher = BFSearcher(param)
     elif algorithm == 'DFS':
