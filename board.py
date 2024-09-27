@@ -1,15 +1,7 @@
-#
-# board.py (Final project)
-#
 # A Board class for the Eight Puzzle
 #
 # name: Sean Zhang
 # email: zsean@bu.edu
-#
-# If you worked with a partner, put their contact info below:
-# partner's name:
-# partner's email:
-#
 
 # a 2-D list that corresponds to the tiles in the goal state
 GOAL_TILES = [['0', '1', '2'],
@@ -24,8 +16,6 @@ class Board:
             is specified by the input digitstr
             input: digitstr is a permutation of the digits 0-9
         """
-        # check that digitstr is 9-character string
-        # containing all digits from 0-9
         assert(len(digitstr) == 9)
         for x in range(9):
             assert(str(x) in digitstr)
@@ -33,9 +23,7 @@ class Board:
         self.tiles = [[''] * 3 for x in range(3)]
         self.blank_r = -1
         self.blank_c = -1
-       
-        # Put your code for the rest of __init__ below.
-        # Do *NOT* remove our code above.
+
         self.digitstr = []
         for x in range(len(digitstr)):
             self.digitstr += digitstr[x]
@@ -48,8 +36,6 @@ class Board:
                     self.blank_r = r
                     self.blank_c = c
     
-
-    ### Add your other method definitions below. ###
     def __repr__(self):
         """ returns a string representation of a Board object. """
         s = ''
