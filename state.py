@@ -1,27 +1,16 @@
-#
-# state.py (Final project)
-#
 # A State class for the Eight Puzzle
 #
 # name: Sean Zhang
 # email: zsean@bu.edu
-#
-# If you worked with a partner, put their contact info below:
-# partner's name:
-# partner's email:
-#
 
 from board import *
 
-# the list of possible moves, each of which corresponds to
-# moving the blank cell in the specified direction
 MOVES = ['up', 'down', 'left', 'right']
 
 class State:
     """ A class for objects that represent a state in the state-space 
         search tree of an Eight Puzzle.
     """
-    ### Add your method definitions here. ###
     def __init__(self, board, predecessor, move):
         """ constructs a new State object by initializing a Board attribute by 
         registering an existing board, a predecessor attribute that stores a 
@@ -43,7 +32,6 @@ class State:
         """ returns a string representation of the State object
             referred to by self.
         """
-        # You should *NOT* change this method.
         s = self.board.digit_string() + '-'
         s += self.move + '-'
         s += str(self.num_moves)
@@ -54,7 +42,6 @@ class State:
             by self) would create a cycle in the current sequence of moves,
             and False otherwise.
         """
-        # You should *NOT* change this method.
         state = self.predecessor
         while state != None:
             if state.board == self.board:
@@ -70,7 +57,6 @@ class State:
             max() will fail with an error when it tries to compare
             two [priority, state] pairs with the same priority.
         """
-        # You should *NOT* change this method.
         return True
 
     def is_goal(self):
