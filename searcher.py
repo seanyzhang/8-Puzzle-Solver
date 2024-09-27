@@ -1,15 +1,7 @@
-#
-# searcher.py (Final project)
-#
 # classes for objects that perform state-space search on Eight Puzzles  
 #
 # name: Sean Zhang
 # email: zsean@bu.edu
-#
-# If you worked with a partner, put their contact info below:
-# partner's name:
-# partner's email:
-#
 
 import random
 from state import *
@@ -20,7 +12,6 @@ class Searcher:
         This will also be used as a superclass of classes for
         other state-space search algorithms.
     """
-    ### Add your Searcher method definitions here. ###
     def __init__(self, depth_limit):
         self.states = []
         self.num_tested = 0
@@ -30,7 +21,6 @@ class Searcher:
         """ returns a string representation of the Searcher object
             referred to by self.
         """
-        # You should *NOT* change this method.
         s = type(self).__name__ + ': '
         s += str(len(self.states)) + ' untested, '
         s += str(self.num_tested) + ' tested, '
@@ -89,8 +79,6 @@ class Searcher:
                 self.add_states(s.generate_successors())
         
         return None
-    
-### Add your BFSeacher and DFSearcher class definitions below. ###
 
 class BFSearcher(Searcher):
     """ BFSearcher is a searcher that always chooses one the untested 
@@ -150,7 +138,6 @@ class GreedySearcher(Searcher):
     """ A class for objects that perform an informed greedy state-space
         search on an Eight Puzzle.
     """
-    ### Add your GreedySearcher method definitions here. ###
     def __init__(self, heuristic):
         """ overwrites the existing constructor for Searcher by setting
         depth limit to -1 (none) and initializing a heuristic attribute.
@@ -163,7 +150,6 @@ class GreedySearcher(Searcher):
         """ returns a string representation of the GreedySearcher object
             referred to by self.
         """
-        # You should *NOT* change this method.
         s = type(self).__name__ + ': '
         s += str(len(self.states)) + ' untested, '
         s += str(self.num_tested) + ' tested, '
@@ -192,7 +178,6 @@ class GreedySearcher(Searcher):
         self.states.remove(s)
         return s[1]
 
-### Add your AStarSeacher class definition below. ###
 class AStarSearcher(GreedySearcher):
     """ A class for searcher objects that perform A* search on 8 puzzle. 
     A* is an informed search algorithm that assigns a priority to each state 
